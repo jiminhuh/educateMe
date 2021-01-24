@@ -1,0 +1,20 @@
+{
+  "name": "educateme",
+  "version": "1.0.0",
+  "description": "A Website that you can search topics and return Research Papers on that Topic.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiminhuh/educateMe.git"
+  },
+  "author": "Jimin Huh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiminhuh/educateMe/issues"
+  },
+  "homepage": "https://github.com/jiminhuh/educateMe#readme"
+}
