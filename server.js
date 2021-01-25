@@ -1,24 +1,24 @@
 //Load HTTP module
-const http = require("http");
-const hostname = '127.0.0.1';
-const express = require('express');
-const app = express();
-const port = 3000;
+const https = require('https');
 
-// //Create HTTP server and listen on port 3000 for requests
-// const server = http.createServer((req, res) => {
+const req = https.get("https://cat-fact.herokuapp.com/facts", (res) => {
+    // console.log(`STATUS: ${res.statusCode}`);
+    // console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
 
-//   //Set the response HTTP header with HTTP status and Content type
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello World\n');
-// });
+    res.on('data', (res) => {
+        let parsedData = JSON.parse(res);
+        for (let i = 0; i < parsedData.length; i++) {
+            console.log(parsedData[i]["text"]);
+        } 
+    });
 
-// //listen for request on port 3000, and as a callback function have the port listened on logged
-// server.listen(port, hostname, () => {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// })
+    res.on('end', () => {
+    // console.log('No more data in response.');
+    });
 
-app.get("core.ac.uk/docs/#1/all/search", (req, res) => {
-    res.send("Hello World!");
-});
+    req.on('error', (e) => {
+        console.error(`problem with request: ${e.message}`);
+    });
+})
+
+req.end();

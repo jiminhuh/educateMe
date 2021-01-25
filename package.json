@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/jiminhuh/educateMe/issues"
   },
-  "homepage": "https://github.com/jiminhuh/educateMe#readme"
+  "homepage": "https://github.com/jiminhuh/educateMe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {}
 }
